@@ -55,7 +55,7 @@ Finally, I didn't use SASS or LESS but I could. It's easy to add the good Webpac
 
 ### The demo project
 
-The project is currently running on a AWS EC2 instance. Please check here: http://34.245.212.83:3001
+The project is currently running on a AWS EC2 instance. Please check here: http://34.245.238.124:3001
 
 ## Run it in local
 
