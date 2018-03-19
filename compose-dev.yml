@@ -1,0 +1,26 @@
+# for dev, overloads the compose.yml file
+version: '3'
+services:
+
+  mongodb:
+    env_file:
+      - configs/dev/mongodb.env
+
+  redis:
+    env_file:
+      - configs/dev/redis.env
+
+  api:
+    env_file:
+      - configs/dev/node.env
+      - configs/dev/api.env
+      - configs/dev/mongodb.env
+      - configs/dev/redis.env
+    volumes:
+      - ./api:/opt/vod
+      
+  client:
+    env_file:
+      - configs/dev/node.env
+    volumes:
+      - ./client:/opt/vod

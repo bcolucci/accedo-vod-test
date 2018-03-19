@@ -1,0 +1,34 @@
+.trailer .modal-body {
+    padding: 2px;
+}
+
+.trailer .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+}
+
+.trailer .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.trailer-footer {
+    text-align: left;
+}
+
+.trailer-footer h3 {
+    font-style: 'italic';
+}
+
+.trailer-footer ul {
+    list-style-type: 'none';
+}
+
+.trailer-footer .stars {
+    position: absolute;
+}

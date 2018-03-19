@@ -1,0 +1,48 @@
+version: '3'
+services:
+
+  # the noSQL database
+  mongodb:
+    image: bitnami/mongodb:3.6
+    env_file:
+      - configs/mongodb.env
+    ports:
+      - 27017:27017
+
+  # for API cache purpose
+  redis:
+    image: bitnami/redis:4.0
+    env_file:
+      - configs/redis.env
+    ports:
+      - 6379:6379
+
+  # the Node.js API
+  api:
+    build: 
+      context: ./api
+    env_file:
+      - configs/node.env
+      - configs/api.env
+      - configs/mongodb.env
+      - configs/redis.env
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongodb
+      - redis
+    volumes:
+      - ./api/dist:/opt/vod/dist
+
+  # the React UI 
+  client:
+    build:
+      context: ./client
+    env_file:
+      - configs/node.env
+    ports:
+      - 3001:3001
+    depends_on:
+      - api
+    volumes:
+      - ./client/dist:/opt/vod/dist

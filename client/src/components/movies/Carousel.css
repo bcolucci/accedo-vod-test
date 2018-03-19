@@ -1,0 +1,25 @@
+.carousel-title h2 {
+    margin: 0;
+    padding: 5px 10px;
+    font-size: 1.3em;
+    color: #eee;
+    background: #000;
+    background: linear-gradient(to right, #000 0%, #f1d511 80%);
+}
+
+.carousel-thumb {
+    opacity: 0.30;
+}
+
+.carousel-thumb:hover {
+    cursor: pointer!important;
+}
+
+.carousel-thumb:hover,
+.carousel-container-active .carousel-thumb-active {
+    opacity: 1;
+}
+
+.slider-decorator-2 {
+    display: none;
+}
